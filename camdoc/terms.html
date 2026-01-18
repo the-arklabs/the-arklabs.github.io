@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - CamDoc</title>
-    <!-- Urbanist Font -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #2563EB;
-            --background: #F8FAFC;
+            --background: #D8DFE9;
             --surface: #FFFFFF;
-            --text-main: #1E293B;
-            --text-secondary: #64748B;
+            --text-main: #212121;
+            --text-secondary: #5f6368;
             --border: #E2E8F0;
         }
 
@@ -31,34 +31,47 @@
         .container {
             background: var(--surface);
             padding: 60px;
-            border-radius: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-radius: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             max-width: 800px;
             margin: 0 auto;
         }
 
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+        }
+
         h1 { 
-            margin: 0 0 16px 0; 
+            margin: 0; 
             color: var(--text-main); 
             font-weight: 700;
-            font-size: 36px;
-            letter-spacing: -1px;
+            font-size: 32px;
+            letter-spacing: -0.5px;
         }
 
         .last-updated {
             color: var(--text-secondary);
             font-size: 14px;
-            margin-bottom: 40px;
             display: block;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
+            margin-top: 8px;
         }
 
         h2 { 
             color: var(--text-main); 
             margin-top: 40px; 
-            font-size: 24px;
-            letter-spacing: -0.5px;
+            font-size: 22px;
+            font-weight: 700;
         }
 
         p, ul {
@@ -70,12 +83,12 @@
         li { margin-bottom: 8px; }
 
         a { 
-            color: var(--primary); 
-            text-decoration: none; 
+            color: var(--text-main); 
+            text-decoration: underline; 
             font-weight: 500;
         }
         
-        a:hover { text-decoration: underline; }
+        a:hover { opacity: 0.7; }
 
         .footer { 
             margin-top: 60px; 
@@ -89,14 +102,20 @@
 
         @media (max-width: 600px) {
             .container { padding: 30px; }
-            h1 { font-size: 28px; }
+            h1 { font-size: 26px; }
+            .header { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Terms of Service</h1>
-        <span class="last-updated">Last Updated: January 17, 2026</span>
+        <div class="header">
+            <img src="logo.png" alt="CamDoc" class="logo" onerror="this.style.display='none'">
+            <div>
+                <h1>Terms of Service</h1>
+                <span class="last-updated">Last Updated: January 17, 2026</span>
+            </div>
+        </div>
 
         <h2>1. Acceptance of Terms</h2>
         <p>By downloading, accessing, or using the CamDoc mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
