@@ -4,62 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - CamDoc</title>
+    <!-- Urbanist Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { color: #34495e; margin-top: 30px; }
+        :root {
+            --primary: #2563EB;
+            --background: #F8FAFC;
+            --surface: #FFFFFF;
+            --text-main: #1E293B;
+            --text-secondary: #64748B;
+            --border: #E2E8F0;
+        }
+
+        body { 
+            font-family: 'Urbanist', sans-serif; 
+            line-height: 1.6; 
+            color: var(--text-main); 
+            background-color: var(--background);
+            margin: 0; 
+            padding: 40px 20px; 
+        }
+
+        .container {
+            background: var(--surface);
+            padding: 60px;
+            border-radius: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 { 
+            margin: 0 0 16px 0; 
+            color: var(--text-main); 
+            font-weight: 700;
+            font-size: 36px;
+            letter-spacing: -1px;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 40px;
+            display: block;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        h2 { 
+            color: var(--text-main); 
+            margin-top: 40px; 
+            font-size: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            color: var(--text-main);
+            margin-top: 24px;
+            font-size: 18px;
+        }
+
+        p, ul {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
         ul { padding-left: 20px; }
-        li { margin-bottom: 10px; }
-        .footer { margin-top: 50px; font-size: 0.9em; color: #7f8c8d; border-top: 1px solid #eee; padding-top: 20px; }
-        a { color: #3498db; text-decoration: none; }
+        li { margin-bottom: 8px; }
+
+        a { 
+            color: var(--primary); 
+            text-decoration: none; 
+            font-weight: 500;
+        }
+        
         a:hover { text-decoration: underline; }
+
+        .footer { 
+            margin-top: 60px; 
+            padding-top: 30px; 
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 30px; }
+            h1 { font-size: 28px; }
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p><strong>Last Updated:</strong> December 7, 2025</p>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <span class="last-updated">Last Updated: December 7, 2025</span>
 
-    <p>This Privacy Policy describes how <strong>CamDoc</strong> ("we", "us", or "our") handles your information when you use our mobile application.</p>
+        <p>This Privacy Policy describes how <strong>CamDoc</strong> ("we", "us", or "our") handles your information when you use our mobile application.</p>
 
-    <h2>1. Data Collection and Usage</h2>
-    <p><strong>We do not collect, store, or share any personal data.</strong></p>
-    <p>CamDoc is designed as an <strong>offline-first</strong> utility application. All operations, including document scanning, PDF creation, and file manipulation, are performed locally on your device. We do not have servers that process your documents.</p>
+        <h2>1. Data Collection and Usage</h2>
+        <p><strong>We do not collect, store, or share any personal data.</strong></p>
+        <p>CamDoc is designed as an <strong>offline-first</strong> utility application. All operations, including document scanning, PDF creation, and file manipulation, are performed locally on your device. We do not have servers that process your documents.</p>
 
-    <h2>2. Permissions and Device Access</h2>
-    <p>To function correctly, CamDoc requires access to certain features on your device. Here is why we ask for them:</p>
-    
-    <h3>Camera Access</h3>
-    <ul>
-        <li><strong>Purpose:</strong> To scan physical documents and convert them into digital images/PDFs.</li>
-        <li><strong>Data Handling:</strong> Images taken via the app are processed instantly on your device. They are not sent to any external server.</li>
-    </ul>
+        <h2>2. Permissions and Device Access</h2>
+        <p>To function correctly, CamDoc requires access to certain features on your device. Here is why we ask for them:</p>
+        
+        <h3>Camera Access</h3>
+        <ul>
+            <li><strong>Purpose:</strong> To scan physical documents and convert them into digital images/PDFs.</li>
+            <li><strong>Data Handling:</strong> Images taken via the app are processed instantly on your device. They are not sent to any external server.</li>
+        </ul>
 
-    <h3>Storage / Photo Library Access</h3>
-    <ul>
-        <li><strong>Purpose:</strong> To allow you to import images or PDFs for editing, and to save your created PDF files to your device.</li>
-        <li><strong>Data Handling:</strong> The app only accesses files you specifically select or create.</li>
-    </ul>
+        <h3>Storage / Photo Library Access</h3>
+        <ul>
+            <li><strong>Purpose:</strong> To allow you to import images or PDFs for editing, and to save your created PDF files to your device.</li>
+            <li><strong>Data Handling:</strong> The app only accesses files you specifically select or create.</li>
+        </ul>
 
-    <h2>3. Third-Party Services</h2>
-    <p>We use standard operating system libraries and reputable open-source packages to perform functionalities (like PDF rendering or image scanning). These tools function locally on your device.</p>
-    <ul>
-        <li>We <strong>do not</strong> use third-party analytics services (e.g., Firebase, Google Analytics).</li>
-        <li>We <strong>do not</strong> display third-party advertisements (e.g., AdMob).</li>
-    </ul>
+        <h2>3. Third-Party Services</h2>
+        <p>We use standard operating system libraries and reputable open-source packages to perform functionalities (like PDF rendering or image scanning). These tools function locally on your device.</p>
+        <ul>
+            <li>We <strong>do not</strong> use third-party analytics services (e.g., Firebase, Google Analytics).</li>
+            <li>We <strong>do not</strong> display third-party advertisements (e.g., AdMob).</li>
+        </ul>
 
-    <h2>4. Data Security</h2>
-    <p>Since your files and data are stored locally on your device, their security depends on your device's security settings (e.g., device passcode, biometric lock). We do not have access to your files.</p>
+        <h2>4. Data Security</h2>
+        <p>Since your files and data are stored locally on your device, their security depends on your device's security settings (e.g., device passcode, biometric lock). We do not have access to your files.</p>
 
-    <h2>5. Changes to This Privacy Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Since we do not collect your email address, we advise you to review this page periodically for any changes.</p>
+        <h2>5. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time. Since we do not collect your email address, we advise you to review this page periodically for any changes.</p>
 
-    <h2>6. Contact Us</h2>
-    <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.</p>
-    <p><strong>Email:</strong> <a href="mailto:contact.arklabs@gmail.com">contact.arklabs@gmail.com</a></p>
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.</p>
+        <p><strong>Email:</strong> <a href="mailto:contact.arklabs@gmail.com">contact.arklabs@gmail.com</a></p>
 
-    <div class="footer">
-        <p>&copy; 2026 Ark Labs. All rights reserved.</p>
-        <p><a href="terms.html">Terms of Service</a></p>
+        <div class="footer">
+            <span>&copy; 2026 Ark Labs. All rights reserved.</span>
+            <a href="terms.html">Terms of Service</a>
+        </div>
     </div>
 </body>
 </html>
