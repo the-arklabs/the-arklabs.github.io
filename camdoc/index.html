@@ -32,6 +32,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            flex-direction: column;
         }
 
         .container {
@@ -42,6 +43,33 @@
             width: 100%;
             max-width: 440px;
             text-align: center;
+            position: relative;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: var(--text-main);
+            color: var(--surface);
+            border-color: var(--text-main);
         }
 
         .logo {
@@ -111,20 +139,70 @@
             color: var(--text-secondary);
             opacity: 0.7;
         }
+        
+        .hidden { display: none !important; }
     </style>
+    <script>
+        function setLang(lang) {
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Toggle visibility of content
+            if (lang === 'tr') {
+                document.getElementById('content-en').classList.add('hidden');
+                document.getElementById('content-tr').classList.remove('hidden');
+                document.documentElement.lang = 'tr';
+            } else {
+                document.getElementById('content-tr').classList.add('hidden');
+                document.getElementById('content-en').classList.remove('hidden');
+                document.documentElement.lang = 'en';
+            }
+        }
+
+        // Auto-detect browser language on load
+        window.onload = function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('tr')) {
+                setLang('tr');
+            } else {
+                setLang('en');
+            }
+        };
+    </script>
 </head>
 <body>
     <div class="container">
+        <div class="lang-switch">
+            <button id="btn-en" class="lang-btn active" onclick="setLang('en')">EN</button>
+            <button id="btn-tr" class="lang-btn" onclick="setLang('tr')">TR</button>
+        </div>
+
         <!-- Logo Image: Ensure logo.png is in the same folder -->
         <img src="logo.png" alt="CamDoc Logo" class="logo" onerror="this.style.display='none'">
         
-        <h1>Ark Labs</h1>
-        <p class="subtitle">Legal & Support Center</p>
-        
-        <div class="links">
-            <a href="mailto:contact.arklabs@gmail.com" class="primary">Contact Support</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="privacy.html">Privacy Policy</a>
+        <!-- English Content -->
+        <div id="content-en">
+            <h1>Ark Labs</h1>
+            <p class="subtitle">Legal & Support Center</p>
+            
+            <div class="links">
+                <a href="mailto:contact.arklabs@gmail.com" class="primary">Contact Support</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </div>
+
+        <!-- Turkish Content -->
+        <div id="content-tr" class="hidden">
+            <h1>Ark Labs</h1>
+            <p class="subtitle">Yasal & Destek Merkezi</p>
+            
+            <div class="links">
+                <a href="mailto:contact.arklabs@gmail.com" class="primary">Destek ile İletişime Geç</a>
+                <a href="terms_tr.html">Kullanım Koşulları</a>
+                <a href="privacy_tr.html">Gizlilik Politikası</a>
+            </div>
         </div>
 
         <div class="footer">
